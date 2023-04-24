@@ -15,11 +15,6 @@
                         "name": "[parameters('containername')]",
                         "properties": {
                             "image": "qdrant/qdrant",
-                            "registryCredentials": {
-                                "server": "mindmate.azurecr.io",
-                                "username": "[parameters('registryusername')]",
-                                "password": "[parameters('registrypassword')]"
-                            },
                             "ports": [
                                 {
                                     "protocol": "TCP",
