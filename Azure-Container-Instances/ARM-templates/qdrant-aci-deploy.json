@@ -15,7 +15,7 @@
                         "name": "[parameters('containername')]",
                         "properties": {
                             "image": "qdrant/qdrant",
-                            "registruCredentials": {
+                            "registryCredentials": {
                                 "server": "mindmate.azurecr.io",
                                 "username": "[parameters('registryusername')]",
                                 "password": "[parameters('registrypassword')]"

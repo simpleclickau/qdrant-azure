@@ -72,9 +72,23 @@
         },
         "imageName": {
             "type": "string",
-            "defaultValue": "qdrant/qdrant:latest",
+            "defaultValue": "mindmate.azurecr.io/qdrant:latest",
             "metadata": {
                 "description": "Name of the image"
+            }
+        },
+        "registryusername": {
+            "type": "string",
+            "defaultValue": "mindmate",
+            "metadata": {
+                "description": "Username of the registry"
+            }
+        },
+        "registrypassword": {
+            "type": "string",
+            "defaultValue": "registrypassword",
+            "metadata": {
+                "description": "Password of the registry"
             }
         },
         "numberCpuCores": {
