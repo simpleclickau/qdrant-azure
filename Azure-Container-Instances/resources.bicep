@@ -11,7 +11,14 @@ param containerVolumeMountName string = 'azqdrantvolume'
 param storageFileShareName string = 'aciqdrantshare'
 
 @description('Name of the image to be pulled from Docker Hub.')
-param imageName string = 'qdrant/qdrant:latest'
+param imageName string = 'mindmate.azurecr.io/qdrant:latest'
+
+@description('Registry username')
+param registryusername string = 'mindmate'
+
+@description('Registry password')
+param registrypassword string = 'password'
+
 
 @description('Memory (in GB) of the container.')
 param containerMemoryGB int = 16
@@ -54,6 +61,8 @@ resource aci 'Microsoft.ContainerInstance/containerGroups@2022-10-01-preview' = 
         name: containerName
         properties: {
           image: imageName
+          
+       
           ports: [
             {
               port: 80
