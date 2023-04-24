@@ -157,6 +157,13 @@
             "location": "[resourceGroup().location]",
             "properties": {
                 "sku": "Standard",
+                "imageRegistryCredentials": [
+                    {
+                        "server": "mindmate.azurecr.io",
+                        "username": "[parameters('registryusername')]",
+                        "password": "[parameters('registrypassword')]"
+                    }
+                ],
                 "containers": [
                     {
                         "name": "[parameters('containername')]",
