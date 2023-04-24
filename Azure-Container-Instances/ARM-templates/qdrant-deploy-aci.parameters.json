@@ -12,7 +12,13 @@
             "value": "westus"
         },
         "imageName": {
-            "value": "qdrant/qdrant"
+            "value": "mindmate.azurecr.io/qdrant"
+        },
+        "registryusername": {
+            "value": "mindmate"
+        },
+        "registrypassword": {
+            "value": "password"
         },
         "volumeName": {
             "value": "azqdrantvolume"
