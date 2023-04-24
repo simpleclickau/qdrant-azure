@@ -7,14 +7,19 @@
             "name": "[parameters('containergroupname')]",
             "type": "Microsoft.ContainerInstance/containerGroups",
             "apiVersion": "2022-10-01-preview",
-            "location":"[resourceGroup().location]",
+            "location": "[resourceGroup().location]",
             "properties": {
                 "sku": "Standard",
                 "containers": [
                     {
                         "name": "[parameters('containername')]",
-                        "properties":{
+                        "properties": {
                             "image": "qdrant/qdrant",
+                            "registruCredentials": {
+                                "server": "mindmate.azurecr.io",
+                                "username": "[parameters('registryusername')]",
+                                "password": "[parameters('registrypassword')]"
+                            },
                             "ports": [
                                 {
                                     "protocol": "TCP",
@@ -31,31 +36,30 @@
                                     "memoryInGB": 16,
                                     "cpu": 4
                                 }
-                            }, 
+                            },
                             "volumeMounts": [
                                 {
                                     "name": "[parameters('volumename')]",
                                     "mountPath": "/aci/qdrant"
                                 }
                             ]
-
                         }
                     }
-                ],    
+                ],
                 "osType": "Linux",
                 "ipAddress": {
-                "type": "Public",
-                "ports": [
-                    {
-                        "protocol": "TCP",
-                        "port": 6333
-                    },
-                    {
-                        "protocol": "TCP",
-                        "port": 80
-                    }
-                ],
-                "dnsNameLabel": "qdrant-aci-dns"
+                    "type": "Public",
+                    "ports": [
+                        {
+                            "protocol": "TCP",
+                            "port": 6333
+                        },
+                        {
+                            "protocol": "TCP",
+                            "port": 80
+                        }
+                    ],
+                    "dnsNameLabel": "qdrant-aci-dns"
                 },
                 "volumes": [
                     {
@@ -65,9 +69,9 @@
                             "storageAccountName": "[parameters('storageaccountname')]",
                             "storageAccountKey": "[parameters('storageaccountkey')]"
                         }
-                }
-          ]
-            }   
+                    }
+                ]
+            }
         }
     ]
 }

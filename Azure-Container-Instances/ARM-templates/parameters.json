@@ -13,6 +13,12 @@
         },
         "imageName": {
             "value": "qdrant/qdrant"
+        },
+        "registryusername": {
+            "value": "mindmate"
+        },
+        "registrypassword": {
+            "value": "password"
         }
     }
 }
