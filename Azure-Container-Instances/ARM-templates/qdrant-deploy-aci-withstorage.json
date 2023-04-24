@@ -162,13 +162,6 @@
                         "name": "[parameters('containername')]",
                         "properties": {
                             "image": "[parameters('imageName')]",
-                            "imageRegistryCredentials": [
-                                {
-                                    "server": "mindmate.azurecr.io",
-                                    "username": "[parameters('registryusername')]",
-                                    "password": "[parameters('registrypassword')]"
-                                }
-                            ],
                             "ports": [
                                 {
                                     "protocol": "TCP",
